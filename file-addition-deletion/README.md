@@ -2,8 +2,8 @@
 When adding a new java file or removing an existing java file, the bazel plugin is not automatically updating BUILD.bazel file, specifically `srcs` under `java_library`.
 
 # Environment
-IntelliJ IDEA 2025.2 (Ultimate Edition)
-Bazel plugin 2025.2.3
+- IntelliJ IDEA 2025.2 (Ultimate Edition)
+- Bazel plugin 2025.2.3
 
 # File Addition
 ## Expected Change in file-addition-deletion/src/main/org/example/BUILD.bazel
