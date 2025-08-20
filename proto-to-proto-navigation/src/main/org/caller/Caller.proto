@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package org.caller;
+
+import "callee/NavigableCallee.proto";
+import "callee/NavigableCalleeEnum.proto";
+import "callee/UnnavigableCalleeNoDeps.proto";
+import "callee/UnnavigableCalleeNoLibrary.proto";
+import "callee/UnnavigableCalleeNoDepsNoLibrary.proto";
+
+option java_multiple_files = true;
+
+message Caller {
+  callee.NavigableCallee navigableCallee = 1;
+  callee.NavigableCalleeEnum navigableCalleeEnum = 2;
+  callee.UnnavigableCalleeNoDeps unnavigableCalleeNoDeps = 3;
+  callee.UnnavigableCalleeNoLibrary unnavigableCalleeNoLibrary = 4;
+  callee.UnnavigableCalleeNoDepsNoLibrary unnavigableCalleeNoDepsNoLibrary = 5;
+}

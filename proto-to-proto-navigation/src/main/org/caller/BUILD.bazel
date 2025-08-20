@@ -1,0 +1,15 @@
+load("@protobuf//bazel:proto_library.bzl", "proto_library")
+
+proto_library(
+    name = "Caller_proto",
+    srcs = ["Caller.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/main/org/callee:NavigableCallee_proto",
+        "//src/main/org/callee:NavigableCalleeEnum_proto",
+        "//src/main/org/callee:UnnavigableCalleeNoDeps_proto",
+        "//src/main/org/callee:UnnavigableCalleeNoLibrary_proto",
+        "//src/main/org/callee:UnnavigableCalleeNoDepsNoLibrary_proto",
+    ],
+)

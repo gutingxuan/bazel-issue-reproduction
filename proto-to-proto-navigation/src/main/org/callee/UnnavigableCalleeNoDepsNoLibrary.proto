@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package callee;
+
+option java_multiple_files = true;
+
+message UnnavigableCalleeNoDepsNoLibrary {
+  string calleeName = 1;
+}

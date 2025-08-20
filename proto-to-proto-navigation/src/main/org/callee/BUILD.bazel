@@ -1,0 +1,59 @@
+load("@protobuf//bazel:java_proto_library.bzl", "java_proto_library")
+load("@protobuf//bazel:proto_library.bzl", "proto_library")
+load("@rules_java//java:defs.bzl", "java_library")
+
+proto_library(
+    name = "NavigableCallee_proto",
+    srcs = ["NavigableCallee.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+    deps = ["@protobuf//:timestamp_proto"],
+)
+
+java_proto_library(
+    name = "NavigableCallee_java_proto",
+    deps = [":NavigableCallee_proto"],
+)
+
+proto_library(
+    name = "NavigableCalleeEnum_proto",
+    srcs = ["NavigableCalleeEnum.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@protobuf//:timestamp_proto",
+    ],
+)
+
+java_proto_library(
+    name = "NavigableCalleeEnum_java_proto",
+    deps = [":NavigableCalleeEnum_proto"],
+)
+
+proto_library(
+    name = "UnnavigableCalleeNoDeps_proto",
+    srcs = ["UnnavigableCalleeNoDeps.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+)
+
+java_proto_library(
+    name = "UnnavigableCalleeNoDeps_java_proto",
+    deps = [":UnnavigableCalleeNoDeps_proto"],
+)
+
+proto_library(
+    name = "UnnavigableCalleeNoLibrary_proto",
+    srcs = ["UnnavigableCalleeNoLibrary.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+    deps = ["@protobuf//:timestamp_proto"],
+)
+
+proto_library(
+    name = "UnnavigableCalleeNoDepsNoLibrary_proto",
+    srcs = ["UnnavigableCalleeNoDepsNoLibrary.proto"],
+    strip_import_prefix = "/src/main/org",
+    visibility = ["//visibility:public"],
+)
+
